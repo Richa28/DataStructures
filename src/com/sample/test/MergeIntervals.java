@@ -37,7 +37,7 @@ public class MergeIntervals {
 		obj.merge(intervals);
 	}
 	
-public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
+	public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
         
         int n = intervals.size();
         ArrayList<Interval> result = new ArrayList<>();
@@ -50,39 +50,47 @@ public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
             return intervals;
         }
         
-        Collections.sort(intervals, new Comparator<Interval>() {
-
-            @Override
-            public int compare(Interval o1, Interval o2) {
-                return o1.start > o2.start ? 1 : 0;
-            }
-            
-        });
+        Collections.sort(intervals, new IntervalComparator());
         
         Stack<Interval> stack = new Stack<>();
+        stack.push(intervals.get(0));
         
-        for(int i=0; i<n; i++){
-            if(stack.isEmpty()){
-                stack.push(intervals.get(i));
-            }else{
-                Interval prev = stack.peek();
-                Interval curr = intervals.get(i);
+        for(int i=1; i<n; i++){
+            Interval prev = stack.peek();
+            Interval curr = intervals.get(i);
                 
-                if(prev.end > curr.start){
-                    stack.pop();
-                    Interval newInterval = new Interval(Math.min(prev.start, curr.start), Math.max(prev.end, curr.end));
-                    stack.push(newInterval);
-                }else{
-                    stack.push(curr);
-                }
+            if(prev.end >= curr.start){
+                stack.pop();
+                Interval newInterval = new Interval(prev.start, Math.max(prev.end, curr.end));
+                stack.push(newInterval);
+            }else{
+                stack.push(curr);
             }
         }
+
+        return getListSortedResult(stack);
+    }
+    
+    private ArrayList<Interval> getListSortedResult(Stack<Interval> stack){
+        ArrayList<Interval> result = new ArrayList<>();
         
         while(!stack.isEmpty()){
             result.add(stack.pop());
         }
-
+        
+        Collections.sort(result, new IntervalComparator());
         return result;
+    }
+    
+    class IntervalComparator implements Comparator<Interval>{
+        @Override
+            public int compare(Interval o1, Interval o2) {
+                if (o1.start != o2.start) {
+                    return o1.start - o2.start;
+                } else {
+                    return o1.end - o2.end;
+                }
+            }
     }
 
 	class Interval {
