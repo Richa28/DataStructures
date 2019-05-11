@@ -15,8 +15,6 @@ public class MinimumNumberFromPattern {
   
         int count = 1; 
   
-        // The loop runs for each input character as well as  
-        // one additional time for assigning rank to each remaining characters 
         for (int i = 0; i <= n; i++) 
         { 
             if (i == n || seq.charAt(i) == 'I') 

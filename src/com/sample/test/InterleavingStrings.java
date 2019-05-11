@@ -6,7 +6,7 @@ public class InterleavingStrings {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(isInterleave("B", "E", "BE"));
+		System.out.println(isInterleave("AB", "CD", "CADB"));
 	}
 
 	public static boolean isInterleave(String A, String B, String C) {

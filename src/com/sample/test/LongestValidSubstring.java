@@ -15,20 +15,20 @@ public class LongestValidSubstring {
 	
 	private int longestValidSubstring(String str) {
 		int n = str.length();
-		Stack<Integer> stack = new Stack<>();
 		int res = 0;
-		stack.push(-1);
+		Stack<Integer> bracketStack = new Stack<>();
+		bracketStack.push(-1);
 		
-		for(int i = 0; i<n; i++) {
+		for(int i=0; i<n; i++) {
 			if(str.charAt(i) == '(') {
-				stack.push(i);
+				bracketStack.push(i);
 			}else {
-				stack.pop();
-			
-				if(!stack.isEmpty()) {
-					res = Math.max(res, i - stack.peek());
+				bracketStack.pop();
+				
+				if(!bracketStack.isEmpty()) {
+					res = Math.max(res, i-bracketStack.peek());
 				}else {
-					stack.push(i);
+					bracketStack.push(i);
 				}
 			}
 		}
