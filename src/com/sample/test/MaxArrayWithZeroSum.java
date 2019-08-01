@@ -48,7 +48,7 @@ public class MaxArrayWithZeroSum {
 			if (temp != null) 
 				max_len = Math.max(max_len, i-temp); 
 			else 
-				map.put(sum, i); 
+				map.put(sum, i);
 		} 
 
 		return max_len; 

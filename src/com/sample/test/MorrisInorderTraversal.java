@@ -172,6 +172,12 @@ public class MorrisInorderTraversal {
 }
 
 class Node{
+	Node(){
+		
+	}
+	Node(int val){
+		this.val = val;
+	}
     int val;
     Node left;
     Node right;

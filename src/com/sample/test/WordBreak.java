@@ -25,17 +25,15 @@ public class WordBreak {
 	}
 	
 	private void wordBreakUtil(String word, List<String> dictionary, String result) {
+		if(word.isEmpty()) {
+			System.out.println(result);
+			return;
+		}
+		
 		for(int i=1; i<=word.length(); i++) {
 			String prefix = word.substring(0, i);
 			
 			if(dictionary.contains(prefix)) {
-				
-				if(i == word.length()) {
-					result += prefix;
-					System.out.println(result);
-					return;
-				}
-				
 				wordBreakUtil(word.substring(i), dictionary, result + prefix + " ");
 			}
 		}

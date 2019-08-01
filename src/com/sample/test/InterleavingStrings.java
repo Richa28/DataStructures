@@ -18,7 +18,7 @@ public class InterleavingStrings {
 		
 		boolean dp[][] = new boolean[n+1][m+1];
 		for (boolean[] row : dp) 
-            Arrays.fill(row, false); 
+            Arrays.fill(row, false);
 		
 		for(int i=0; i<=n; i++) {
 			for(int j=0; j<=m; j++) {

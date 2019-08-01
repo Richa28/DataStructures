@@ -56,11 +56,6 @@ public class BerlinTest {
 		int x = squareMaximizer(list);
 		System.out.println(x);
 		
-		String a = "test";
-		String c = "test";
-		String b = new String("test");
-		System.out.println(a==c);
-		
 	}
 	
 	static int squareMaximizer(List<List<Integer>> matrix) {
@@ -69,7 +64,7 @@ public class BerlinTest {
         int n = matrix.get(0).size();
         int sub_array[][] = new int[m][n];
 
-        int maxSubArraySize, max_i, max_j;
+        int maxSubArraySize;
 
         for (i = 0; i < m; i++)
         {
@@ -91,14 +86,14 @@ public class BerlinTest {
         }
 
         maxSubArraySize = sub_array[0][0];
-        max_i = 0;
-        max_j = 0;
+      //  max_i = 0;
+       // max_j = 0;
         for (i = 0; i < m; i++) {
             for (j = 0; j < n; j++) {
                 if (maxSubArraySize < sub_array[i][j]) {
                     maxSubArraySize = sub_array[i][j];
-                    max_i = i;
-                    max_j = j;
+         //           max_i = i;
+           //         max_j = j;
                 }
             }
         }
@@ -171,9 +166,6 @@ public class BerlinTest {
         int temp[][] = new int[m][n];
         int max_len = 0; 
   
-        int max_row = 0; 
-        int max_col = 0; 
-  
         for (int i = 0; i < m; i++) 
         { 
             for (int j = 0; j < n; j++) 
@@ -187,8 +179,8 @@ public class BerlinTest {
                         if (max_len < temp[i][j]) 
                         { 
                             max_len = temp[i][j]; 
-                            max_row = i;
-                            max_col = j; 
+                         //   max_row = i;
+                          //  max_col = j; 
                         } 
                     } 
   
@@ -198,8 +190,8 @@ public class BerlinTest {
                         if (max_len < temp[i][j]) 
                         { 
                             max_len = temp[i][j]; 
-                            max_row = i;
-                            max_col = j; 
+                         //   max_row = i;
+                          //  max_col = j; 
                         }  
                     } 
                 }

@@ -1,8 +1,6 @@
 package com.sample.test;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class TwoSum {
 
@@ -61,15 +59,6 @@ public class TwoSum {
 			}
 		}
 		return res;
-	}
-
-	private static Map<Integer, Integer> populateMapData(int[] A){
-		Map<Integer, Integer> map = new HashMap<>();
-		for(int i=0; i<A.length; i++) {
-			map.put(A[i], i);
-		}
-		
-		return map;
 	}
 
 }

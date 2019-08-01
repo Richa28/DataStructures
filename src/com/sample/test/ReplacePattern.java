@@ -1,13 +1,10 @@
 package com.sample.test;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class ReplacePattern {
 	
-	private static final Scanner scanner = new Scanner(System.in);
+	//private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
     	

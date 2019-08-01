@@ -62,7 +62,7 @@ public class GridSearch {
 
             int R = Integer.parseInt(RC[0]);
 
-            int C = Integer.parseInt(RC[1]);
+      //      int C = Integer.parseInt(RC[1]);
 
             String[] G = new String[R];
 
@@ -75,7 +75,7 @@ public class GridSearch {
 
             int r = Integer.parseInt(rc[0]);
 
-            int c = Integer.parseInt(rc[1]);
+            //int c = Integer.parseInt(rc[1]);
 
             String[] P = new String[r];
 
